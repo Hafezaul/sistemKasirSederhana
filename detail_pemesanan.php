@@ -29,7 +29,7 @@ if(isset($_GET['id'])) {
                 </tr>
                 <tr>
                     <td><strong>Email:</strong></td>
-                    <td><?php echo $pesanan['email']; ?></td>
+                    <td><?php echo $pesanan['to_email']; ?></td>
                 </tr>
                 <tr>
                     <td><strong>Tanggal:</strong></td>

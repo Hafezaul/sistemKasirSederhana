@@ -1,7 +1,5 @@
 <?php
 session_start();
-
-// Cek apakah ada data pesanan sukses
 if(!isset($_SESSION['pesanan_sukses'])) {
     header('Location: index.php');
     exit;
@@ -123,10 +121,9 @@ $pesanan = $_SESSION['pesanan_sukses'];
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     
     <script type="text/javascript">
-        // Inisialisasi EmailJS
-        // PENTING: Ganti dengan Service ID, Template ID, dan Public Key Anda sendiri dari EmailJS
+
         (function(){
-            emailjs.init("YOUR_PUBLIC_KEY"); // Ganti dengan Public Key Anda
+            emailjs.init("WWokYAKaKvD1Qfx2E"); 
         })();
 
         // Kirim email notifikasi
@@ -139,9 +136,8 @@ $pesanan = $_SESSION['pesanan_sukses'];
                 message: 'Pesanan Anda sedang diproses dan dikemas. Kami akan mengirimkan notifikasi lebih lanjut melalui email.'
             };
 
-            // Kirim email menggunakan EmailJS
-            // PENTING: Ganti 'YOUR_SERVICE_ID' dan 'YOUR_TEMPLATE_ID' dengan ID Anda
-            emailjs.send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', templateParams)
+           
+            emailjs.send('service_tpabzfg', 'template_ebrx88p', templateParams)
                 .then(function(response) {
                     console.log('Email berhasil dikirim!', response.status, response.text);
                 }, function(error) {
@@ -152,6 +148,5 @@ $pesanan = $_SESSION['pesanan_sukses'];
 </body>
 </html>
 <?php 
-// Hapus data pesanan sukses dari session
 unset($_SESSION['pesanan_sukses']);
 ?>
